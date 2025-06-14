@@ -1,0 +1,30 @@
+.main-container {
+  padding: 30px;
+}
+
+.title {
+  font-size: clamp(32px, 3.8vw, 38px);
+  margin-bottom: 30px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+.form-container button {
+  height: clamp(40px, 50vw, 50px);
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(168, 9, 9);
+  font-size: 18px;
+  color: #eee;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.form-container button:hover {
+  background-color: rgb(134, 9, 9);
+}

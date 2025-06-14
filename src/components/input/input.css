@@ -1,0 +1,19 @@
+.input {
+  display: block;
+  width: 800px;
+  max-width: calc(100vw - 60px);
+  height: clamp(40px, 50vw, 50px);
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #888;
+  font-size: 16px;
+  margin-top: 3px;
+}
+
+.input:focus {
+  outline: 1px solid rgb(168, 9, 9);
+}
+
+.input-label {
+  font-size: 18px;
+}
