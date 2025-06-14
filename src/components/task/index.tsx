@@ -9,7 +9,11 @@ interface TaskProps {
   status: TaskStatus;
 }
 
-export const Task = ({ title, description, status }: TaskProps) => {
+export const Task = ({
+  title,
+  description = "Sem descricao",
+  status,
+}: TaskProps) => {
   const statusMsg =
     status == "pending"
       ? "Pendente"

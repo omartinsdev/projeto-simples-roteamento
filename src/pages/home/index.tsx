@@ -8,7 +8,7 @@ export function HomePage() {
       <div className="tasks-list">
         <Task
           title="Estudar TypeScript"
-          description="Revisar conceitos de TS vistos semana passada no cursooooooooooooooooooooooooooooooooooooooooooooooooooooooo"
+          description="Revisar conceitos de TS do curso"
           status="pending"
         />
 
@@ -17,6 +17,8 @@ export function HomePage() {
           description="Estudar RN pela parte da noite"
           status="in-progress"
         />
+
+        <Task title="Revisar roteamento React Router" status="completed" />
       </div>
     </div>
   );
