@@ -4,7 +4,7 @@ import { HomePage } from "./pages/home";
 import { PendingTasks } from "./pages/pending";
 import { NewTask } from "./pages/new-task";
 import { ErrorNotFound } from "./pages/not-found";
-import { Layout } from "./layout";
+import { Layout } from "./components/layout";
 import { TaskDetails } from "./pages/task-details";
 
 export const appRouter = createBrowserRouter([
@@ -27,10 +27,10 @@ export const appRouter = createBrowserRouter([
         path: "/task/:id",
         element: <TaskDetails />,
       },
-      {
-        path: "*",
-        element: <ErrorNotFound />,
-      },
     ],
+  },
+  {
+    path: "*",
+    element: <ErrorNotFound />,
   },
 ]);
