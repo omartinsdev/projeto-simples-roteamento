@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-export function PendingTasks() {
+export function TasksPage() {
   return (
     <div>
       <header>

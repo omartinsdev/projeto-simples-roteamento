@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useId, type ChangeEventHandler } from "react";
 
 import "./input.css";
 
@@ -8,9 +8,17 @@ interface InputProps {
   name: InputNames;
   text: string;
   labelMsg: string;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  value: string;
 }
 
-export const Input = ({ name, text, labelMsg }: InputProps) => {
+export const Input = ({
+  name,
+  text,
+  labelMsg,
+  onChange,
+  value,
+}: InputProps) => {
   const inputId = useId();
 
   return (
@@ -23,6 +31,8 @@ export const Input = ({ name, text, labelMsg }: InputProps) => {
         name={name}
         id={inputId}
         placeholder={text}
+        onChange={onChange}
+        value={value}
         className="input"
       />
     </div>

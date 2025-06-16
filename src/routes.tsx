@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router";
 
 import { HomePage } from "./pages/home";
-import { PendingTasks } from "./pages/pending";
-import { NewTask } from "./pages/new-task";
-import { ErrorNotFound } from "./pages/not-found";
+import { TasksPage } from "./pages/tasks";
+import { TaskFormPage } from "./pages/taskForm";
+import { NotFoundPage } from "./pages/notFound";
 import { Layout } from "./components/layout";
-import { TaskDetails } from "./pages/task-details";
+import { TaskPage } from "./pages/task";
 
 export const appRouter = createBrowserRouter([
   {
@@ -17,20 +17,20 @@ export const appRouter = createBrowserRouter([
       },
       {
         path: "/tasks/pending",
-        element: <PendingTasks />,
+        element: <TasksPage />,
       },
       {
         path: "/task/new",
-        element: <NewTask />,
+        element: <TaskFormPage />,
       },
       {
         path: "/task/:id",
-        element: <TaskDetails />,
+        element: <TaskPage />,
       },
     ],
   },
   {
     path: "*",
-    element: <ErrorNotFound />,
+    element: <NotFoundPage />,
   },
 ]);

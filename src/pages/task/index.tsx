@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 
-export const TaskDetails = () => {
+export const TaskPage = () => {
   const params = useParams();
 
   return (

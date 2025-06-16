@@ -1,24 +1,40 @@
-import { Task } from "../../components/task";
+import { useEffect, useState } from "react";
+import { Task } from "./components/task";
+import type { TaskProps } from "./components/task";
 
 import "./home.css";
 
 export function HomePage() {
+  const [tasksList, setTasksList] = useState<TaskProps[]>([
+    {
+      title: "Comprar pao todo dia",
+      status: "completed",
+      id: 12,
+    },
+  ]);
+
+  useEffect(() => {
+    const savedTasks = localStorage.getItem("@DevTarefas");
+
+    if (savedTasks) {
+      return setTasksList([JSON.parse(savedTasks)]);
+    }
+  }, []);
+
+  console.log(tasksList);
+
   return (
     <div className="main-container">
       <div className="tasks-list">
-        <Task
-          title="Estudar TypeScript"
-          description="Revisar conceitos de TS do curso"
-          status="pending"
-        />
-
-        <Task
-          title="Estudar React Native"
-          description="Estudar RN pela parte da noite"
-          status="in-progress"
-        />
-
-        <Task title="Revisar roteamento React Router" status="completed" />
+        {tasksList.map((task) => (
+          <Task
+            title={task.title}
+            description={task.description}
+            status={task.status}
+            id={task.id}
+            key={task.id}
+          />
+        ))}
       </div>
     </div>
   );
